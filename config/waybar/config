@@ -1,69 +1,64 @@
 {
-    "layer": "top", // Waybar at top layer
+  "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
+                       // "width": 1280, // Waybar width
+                       // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
+    "modules-right": ["pulseaudio", "clock", "battery", "tray", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
-         "disable-scroll": true,
-         "sort-by-name": false,
-         "sort-by-number": true,
-         "format": "{name}"
-     },
+      "disable-scroll": true,
+      "sort-by-name": false,
+      "sort-by-number": true,
+      "format": "{name}"
+    },
     "tray": {
-        "icon-size": 21,
-        "spacing": 10
+      "icon-size": 16,
+      "spacing": 6
     },
     "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
-    },
-    "clock": {
-        "timezone": "Europe/Oslo",
-        "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+      "format": "  {}",
+      "escape": true,
+      "interval": 5,
+      "tooltip": false,
+      "exec": "playerctl metadata --format='{{ title }}'",
+      "on-click": "playerctl play-pause",
+      "max-length": 50
     },
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄",
-        "format-plugged": "󰂄",
-        "format-alt": "{icon}",
-        "format-icons": ["󰂃", "󰁺",  "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": "󰂄",
+      "format-plugged": "󰂄",
+      "format-alt": "{icon}",
+      "format-icons": ["󰂃", "󰁺",  "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "clock": {
+      "timezone": "Europe/Oslo",
+      "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "  {:%d/%m/%Y}",
+      "format": "   {:%H:%M}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", " "]
-        },
-        "on-click": "pavucontrol"
+      // "scroll-step": 1, // %, can be a float
+      "format": "{icon} {volume}%",
+      "format-muted": "",
+      "format-icons": {
+        "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
     },
     "custom/lock": {
-        "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": "",
+      "tooltip": false,
+      "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+      "format": "",
     },
     "custom/power": {
-        "tooltip": false,
-        "on-click": "wlogout &",
-        "format": "⏻"
+      "tooltip": false,
+      "on-click": "wlogout &",
+      "format": "⏻"
     }
 }
