@@ -11,7 +11,8 @@ return {
     keys = {
       { '<leader>pf', ':Telescope find_files<CR>', mode = 'n' },
       { '<C-p>', ':Telescope git_files<CR>', mode = 'n' },
-      { '<leader>ps', function()
+      { '<leader>ps', ':Telescope live_grep<CR>', mode = 'n' },
+      { '<leader>pS', function()
         require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") })
       end,
       mode = 'n' },
