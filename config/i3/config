@@ -75,7 +75,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom -b
 
 #Screen setup
-exec --no-startup-id xrandr --output DP-4 --primary --mode 3440x1440 --output HDMI-0 --left-of DP-4
+exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --output HDMI-0 --left-of DP-0 --output DP-3 --right-of DP-0
 
 # Load background
 exec --no-startup-id feh --bg-scale ${HOME}/.config/wallpapers/3440x1440/solid-color-crust.png
@@ -98,7 +98,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Shift+o exec --no-startup-id /${HOME}/Obsidian-1.6.7.AppImage
 
 # start a terminal
-bindsym $mod+q exec kitty
+bindsym $mod+q exec ghostty
 
 # kill focused window
 bindsym $mod+c kill
@@ -237,7 +237,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 # Start polybar
-exec --no-startup-id POLYBAR_MONITOR=DP-4 polybar
+exec --no-startup-id POLYBAR_MONITOR=DP-0 polybar
 exec --no-startup-id POLYBAR_MONITOR=HDMI-0 polybar
 
 

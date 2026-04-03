@@ -1,3 +1,8 @@
 
 theme = Catppuccin Macchiato
 
+gtk-titlebar = false
+working-directory = home
+window-inherit-working-directory = false
+window-decoration = server
+
