@@ -75,10 +75,7 @@ return {
       },
     },
     config = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        opts.ensure_installed = LazyVim and LazyVim.dedup(opts.ensure_installed) or opts.ensure_installed
-      end
-      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter").setup(opts)
     end,
   },
   {

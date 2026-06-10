@@ -21,3 +21,9 @@ While all configurations can be installed together, if you prefer to keep your `
 * **nvim** - Neovim text editor
 * **gtk-3.0** - Theme configuration for GTK applications
 * **wallpapers** - Directory for wallpapers (not a software, just a folder)
+
+## Requirements ##
+
+### Neovim ###
+* **Version:** 0.11 or newer — required for the `vim.lsp.config` / `vim.lsp.enable` API
+* Ubuntu and other distros often ship outdated Neovim versions via their package managers. Install directly from the [Neovim releases page](https://github.com/neovim/neovim/releases) to ensure you have a supported version.
