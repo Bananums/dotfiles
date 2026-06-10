@@ -75,7 +75,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom -b
 
 #Screen setup
-exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --output HDMI-0 --left-of DP-0 --output DP-3 --right-of DP-0
+#exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --output HDMI-0 --left-of DP-0 --output DP-3 --right-of DP-0 # Handled by SDDM
+workspace 1 output HDMI-0
+workspace 2 output DP-0
+workspace 3 output DP-3
 
 # Load background
 exec --no-startup-id feh --bg-scale ${HOME}/.config/wallpapers/3440x1440/solid-color-crust.png

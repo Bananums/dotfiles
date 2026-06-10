@@ -34,7 +34,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local on_attach = function(_, bufnr)
@@ -47,13 +46,14 @@ return {
         map("n", "<leader>e", vim.diagnostic.open_float, opts)
       end
 
-      lspconfig.ts_ls.setup({
-        capabilities=capabilities,
+      vim.lsp.config("ts_ls", {
+        capabilities = capabilities,
         on_attach = on_attach
       })
 
-      lspconfig.clangd.setup({
-        capabilities=capabilities,
+      vim.lsp.config("clangd", {
+        capabilities = capabilities,
+
         on_attach = function(_, bufnr)
           on_attach(_, bufnr)
 
@@ -62,8 +62,8 @@ return {
         end
       })
 
-      lspconfig.lua_ls.setup({
-        capabilities=capabilities,
+      vim.lsp.config("lua_ls", {
+        capabilities = capabilities,
         on_attach = on_attach
       })
 
