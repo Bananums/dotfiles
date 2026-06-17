@@ -72,7 +72,7 @@ EOF
 
 main() {
   local action="symlink"
-  local topics=(ghostty gtk-3.0 hypr i3 kitty nvim picom polybar rofi waybar wofi wallpapers)
+  local topics=(ghostty gtk-3.0 hypr i3 kitty nvim picom polybar rofi tmux waybar wofi wallpapers)
 
   for arg in "$@"; do
     case "$arg" in

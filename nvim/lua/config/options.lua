@@ -1,5 +1,6 @@
 
 -- File line number and highligthing
+vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.cursorline = true
