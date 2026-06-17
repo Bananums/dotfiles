@@ -18,9 +18,9 @@ create_symlink(){
   fi
 
   if $DRY_RUN; then
-    echo "ln -sf $source $dest"
+    echo "ln -sfn $source $dest"
   else
-    ln -sf "$source" "$dest"
+    ln -sfn "$source" "$dest"
   fi
 }
 
@@ -72,7 +72,7 @@ EOF
 
 main() {
   local action="symlink"
-  local topics=(ghostty gtk-3.0 hypr i3 kitty nvim picom polybar rofi waybar wofi)
+  local topics=(ghostty gtk-3.0 hypr i3 kitty nvim picom polybar rofi waybar wofi wallpapers)
 
   for arg in "$@"; do
     case "$arg" in
